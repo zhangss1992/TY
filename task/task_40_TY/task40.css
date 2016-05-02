@@ -1,0 +1,52 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    height: 100%;
+    width: 100%;
+    font-family: "微软雅黑";
+    font-size: 1em;
+}
+#content{
+   position: absolute;
+    top: 25%;
+    left: 30%;
+    text-align: center;
+}
+#myText{
+   margin: 20px;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    ;
+}
+#selectBox select{
+    margin: 5px 20px 5px 20px;
+    width: 80px;
+    height: 20px;
+    border: 1px solid #767a82;
+}
+#myTable{
+    margin: 10px;
+    /*border-collapse: collapse;*/
+}
+#myTable thead th{
+   background-color: #80cdff;
+    border-radius: 5px;
+    height: 30px;
+    line-height: 30px;
+    width: 4em;
+}
+.tdClass{
+    background-color: #c2f3fa;
+    border-radius: 5px;
+    height: 30px;
+    line-height: 30px;
+    width: 4em;
+}
+.tdClass:hover {
+    background-color: #f3a405;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务三十七：UI组件之浮出层</title>
+</head>
+<style>
+    body{
+        padding: 0px;
+        margin: 0px;
+        font-family: "微软雅黑";
+        font-size: 1em;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        /*opacity: 0.7;*/
+    }
+    header{
+        background-color: aquamarine;
+        display: block;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 1.5em;
+
+    }
+    ul{
+        padding: 10px;
+        margin: 0px;
+    }
+    a{
+        text-decoration: none;
+        list-style: none;
+    }
+    section{
+        padding: 10px;
+        margin: 10px;
+    }
+    #loginBox{
+        width: 400px;
+        height: 200px;
+        border: 1px solid #000000;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        /*margin: -100px 0 0 -200px ;*/
+        z-index: 99;
+        background-color: #ffffff;
+        margin-left: -200px;
+        margin-top: -100px;
+    }
+    #loginBoxHeader{
+        width: 100%;
+        border-bottom: 1px solid #000000;
+        margin:5px 0 10px 0;
+        cursor: move;
+    }
+    #loginBoxHeader h1{
+        display: inline-block;
+        margin: 0px 250px 5px 10px;
+
+    }
+    #loginBoxHeader input{
+        width: 30px;
+        height: 30px;
+    }
+    .login-content{
+        margin: 10px 5px 10px  5px;
+        text-align: center;
+    }
+    .login-content{
+        display: block;
+    }
+    .login-content input{
+        width: 250px;
+        height: 30px;
+        margin-top: 10px;
+    }
+    #mask{
+        /*display: none;*/
+
+        height: 100%;
+        width: 100%;
+        left: 0;
+        margin: 0;
+        top: 0;
+        opacity: 0.7;
+        position:absolute;
+        visibility:visible;
+        background-color: #f3f3f3;
+        /*z-index: 998;*/
+
+    }
+
+</style>
+<body>
+<header>
+    <ul>
+        <li class="signin-link" id="loginLink">
+            <a href=""> 登录</a>
+        </li>
+    </ul>
+</header>
+<section>
+    <h1>点击半透明遮罩或浮出层顶部关闭按钮,关闭浮出层</h1>
+    <h1>点击页面深绿色头部登录按钮,显示浮出层</h1>
+    <h1>拖拽浮出层顶部,可使其移动</h1>
+    <h1>拖拽浮出层右边框或下边框,可改变其大小</h1>
+
+    <p>随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。</p>
+    <p>随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。</p>
+    <p>随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。</p>
+    <p>随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。</p>
+    <p>随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。</p>
+    <p>随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。</p>
+    <p>随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。</p>
+    <p>随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。</p>
+    <p>随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。随便打的。</p>
+
+
+    </section>
+<div class="mask" id="mask"></div>
+<div class="login-box" id="loginBox">
+    <div class="login-box-header" id="loginBoxHeader">
+        <h1>登录</h1>
+        <input class="close-btn" id="closeBtn" type="button" value="X" />
+    </div>
+
+    <div class="login-content">
+        <form method="post" action="signin.php">
+            <input type="text" name="username" placeholder="请输入用户名/邮箱" />
+            <input type="password" name="password" placeholder="请输入密码" />
+            <input type="button" value="登录" />
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="task37.js"></script>
+<!--<script type="text/javascript" src="jquery.js" ></script>-->
+
+</body>
+</html>
